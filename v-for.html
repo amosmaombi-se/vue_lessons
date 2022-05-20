@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-FOR</title>
+</head>
+<style>
+    [v-cloak] {
+        display: none;
+    }
+</style>
+
+<body>
+    <div id="vue_app">
+        <div v-cloak>
+            <h3>{{title}}</h3>
+            <ul>
+                <li v-for="(elem,index) in cities" :key='index'>
+                    {{elem}}
+                </li>
+            </ul>
+
+            <ul>
+                <li v-for="(elem,index) in people" :key='index'>
+                    {{elem.Name}} <strong>{{elem.JobTitle}} </strong>
+                </li>
+            </ul>
+
+            <ul>
+                <li v-for="(value,name,index) in citi" :key='index'>
+                    {{index}} {{name}} <strong>{{value}} </strong>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src=" https://unpkg.com/vue@next "></script>
+    <script>
+        let app = Vue.createApp({
+            data() {
+                return {
+                    title: 'V-FOR',
+                    cities: ['London', 'Nairobi', 'Vatcan'],
+                    people: [{
+                        Name: 'John cena',
+                        JobTitle: 'Driver'
+                    }, {
+                        Name: 'Amos Maombi',
+                        JobTitle: 'Farmer'
+                    }],
+                    json: [{
+                        PlayerName: 'Pele',
+                        Position: 'Striker',
+                        Age: 78
+                    }, {
+                        PlayerName: 'John Terry',
+                        Position: 'Defender',
+                        Age: 38
+                    }, {
+                        PlayerName: 'C.Ronaldo',
+                        Position: 'Foward',
+                        Age: 37
+                    }]
+                }
+            }
+        })
+        let vm = app.mount('#vue_app');
+    </script>
+</body>
+
+</html>
+
+</html>

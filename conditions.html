@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condition rendering</title>
+</head>
+
+<body>
+    <div id="vue_app">
+        <!-- <p v-show="!have">Number of people in this country</p>
+        <p>All money in the world</p>
+        <p v-if="have">All money in the world</p> -->
+
+        <!-- <h2 v-if="fruit">This is Apple</h2>
+        <h2 v-else>This is not Apple</h2> -->
+
+        <ul>
+            <li v-if="fruit ==`Apple`">Its Apple</li>
+            <li v-else-if="fruit==`Orange`"> Its Orange</li>
+            <li v-else>Others</li>
+        </ul>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        let app = Vue.createApp({
+            data() {
+                return {
+                    msg: 'Hello, world',
+                    have: true,
+                    fruit: 'Orange'
+                }
+            }
+        })
+        let vm = app.mount('#vue_app');
+    </script>
+</body>
+
+</html>
